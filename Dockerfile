@@ -1,5 +1,7 @@
 FROM ubuntu:20.04
 
+ENV ASPNETCORE_URLS http://*:80
+
 WORKDIR /app
 
 #Install Base Requirements
@@ -27,4 +29,4 @@ COPY app/. /app
 RUN dotnet build
 
 #Start our dotnet app
-CMD ["dotnet", "run"]
+CMD ["dotnet", "run", "--server.urls", "http://*:80"]
