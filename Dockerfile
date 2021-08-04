@@ -29,4 +29,4 @@ COPY app/. /app
 RUN dotnet build
 
 #Start our dotnet app
-CMD ["dotnet", "run", "--server.urls", "http://*:80"]
+CMD ["dotnet", "watch", "run", "--server.urls", "http://*:80"]
